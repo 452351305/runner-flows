@@ -1,9 +1,8 @@
-package tech.guyi.component.flows.endpoint;
+package tech.guyi.component.flows.endpoint.end;
 
 import tech.guyi.component.flows.api.FlowsContext;
 import tech.guyi.component.flows.api.endpoint.EndpointProperty;
 import tech.guyi.component.flows.api.executor.EndExecutor;
-import tech.guyi.component.flows.api.executor.ExecutorProperty;
 
 import java.util.Collections;
 import java.util.List;
@@ -20,7 +19,7 @@ public class ConsoleExecutor implements EndExecutor {
     }
 
     @Override
-    public List<ExecutorProperty> getPropertyKeys() {
+    public List<String> getPropertyKeys() {
         return Collections.emptyList();
     }
 

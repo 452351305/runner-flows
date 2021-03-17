@@ -13,9 +13,9 @@ import java.util.List;
  */
 @Data
 @AllArgsConstructor
-public class ExecutorEntry {
+public class ExecutorEntry<E extends Executor> {
 
-    private Executor executor;
+    private E executor;
     private List<EndpointProperty> properties;
 
 }

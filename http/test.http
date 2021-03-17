@@ -1,0 +1,51 @@
+#创建流
+POST http://localhost:8080/flow
+Content-Type: application/json
+
+{
+  "name": "测试流程",
+  "start": {
+    "name": "udp",
+    "target": "udp-server",
+    "properties": [
+      {
+        "key": "port",
+        "value": "9999"
+      }
+    ]
+  },
+  "end": {
+    "name": "out",
+    "target": "console",
+    "properties": []
+  },
+  "mid": [
+    {
+      "name": "converter",
+      "target": "byte-to-string",
+      "properties": []
+    },
+    {
+      "name": "js",
+      "target": "javascript",
+      "properties": [
+        {
+          "key": "func",
+          "value": "context.resp + ' - JS转换'"
+        }
+      ]
+    }
+  ]
+}
+
+###
+
+#启动流
+GET http://localhost:8080/flow/start/<创建流返回的ID>
+
+###
+
+#停止流
+GET http://localhost:8080/flow/stop/<创建流返回的ID>
+
+###

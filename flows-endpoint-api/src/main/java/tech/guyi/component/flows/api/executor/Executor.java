@@ -21,6 +21,7 @@ public interface Executor {
         return properties.stream()
                 .filter(p -> p.getKey().equals(key))
                 .findFirst()
+                .map(EndpointProperty::getValue)
                 .orElse(null);
     }
 
@@ -28,7 +29,7 @@ public interface Executor {
      * 属性键集合
      * @return 属性键集合
      */
-    List<ExecutorProperty> getPropertyKeys();
+    List<String> getPropertyKeys();
 
     /**
      * 执行器唯一标识

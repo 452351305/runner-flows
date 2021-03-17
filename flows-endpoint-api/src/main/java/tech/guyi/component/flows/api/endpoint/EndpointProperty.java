@@ -22,10 +22,5 @@ public class EndpointProperty {
      * 值
      */
     private String value;
-    /**
-     * 属性类型
-     */
-    private EndpointPropertyType type;
-
 
 }
